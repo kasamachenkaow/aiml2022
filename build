@@ -1,0 +1,9 @@
+#!/bin/sh
+
+rm daramic-qr.zip
+rm -rf ./daramic
+mkdir daramic
+python ./qrcode/gen-daramic.py
+zip -vr daramic-qr.zip daramic/ -x "*.DS_Store"
+open .
+
