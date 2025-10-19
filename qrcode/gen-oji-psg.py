@@ -1,5 +1,7 @@
 import qrcode
 
+folder = "psg_oji"
+area_id = "ar_1DdL31sy2rqPXYtiSXfShL"
 
 # List of texts to be converted to QR codes
 def generate_qr_codes(texts):
@@ -13,12 +15,12 @@ def generate_qr_codes(texts):
         img = qr.make_image(fill_color="black", back_color="white")
 
         # Save the image as a PNG file with filename same as input text
-        filename = "pm_food/" + text["name"] + ".png"
+        filename = folder + "/" + text["name"] + ".png"
         img.save(filename)
 
 
 input_texts = [{
-    "url": "https://verify-psg.secure-smart-guard.com?stationId=st_vUwwRUF2fGZMFe1oRDAYBS&qrCode=QR{:05d}".format(i),
+    "url": "https://verify-psg.secure-smart-guard.com?areaId={:s}&qrCode=QR{:05d}".format(area_id, i),
     "name": "QR{:05d}".format(i),
 } for i in range(1, 51)]
 generate_qr_codes(input_texts)

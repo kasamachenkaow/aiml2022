@@ -18,7 +18,7 @@ def generate_qr_codes(texts):
 
 
 input_texts = [{
-    "url": "https://verify-psg.secure-smart-guard.com?area=daramic_hq&qrCode=QR{:05d}".format(i),
+    "url": "https://verify-psg.secure-smart-guard.com?stationId=daramic_hq_front_gate&qrCode=QR{:05d}".format(i),
     "name": "QR{:05d}".format(i),
 } for i in range(1, 51)]
 generate_qr_codes(input_texts)
